@@ -4,10 +4,15 @@ A port of the [ProofNet](https://github.com/zhangir-azerbayev/ProofNet) benchmar
 
 The original ProofNet (Azerbayev et al.) targeted Lean 3 / Mathlib3. It was later ported to Lean 4.9.0 as part of [DeepSeek-Prover-V1.5](https://github.com/deepseek-ai/DeepSeek-Prover-V1.5) (see `datasets/proofnet.jsonl` in that repo). This repo updates that port to **Lean 4.27.0** with **Mathlib v4.27.0**.
 
-## Contents
+## Repo structure
 
-- `proofnet.jsonl` -- the benchmark in the same JSONL format as the DeepSeek version (371 entries: 185 valid, 186 test), with updated formal statements
-- `ProofNet/` -- a self-contained Lean project that type-checks both splits against Mathlib v4.27.0
+```
+data/proofnet.jsonl   -- benchmark in JSONL format (371 entries: 185 valid, 186 test)
+ProofNet/             -- Lean project (Lean 4.27.0 + Mathlib v4.27.0)
+  Proofnet/
+    ProofnetValid.lean
+    ProofnetTest.lean
+```
 
 ## Building the Lean project
 
