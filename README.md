@@ -62,9 +62,9 @@ Bare `range T` for a linear map is ambiguous between `LinearMap.range` and `Set.
 
 `Subgroup.relindex` was renamed to `Subgroup.relIndex`.
 
-### `QuotientMap` renamed to `IsQuotientMap`
+### `QuotientMap` renamed to `Topology.IsQuotientMap`
 
-Follows the Mathlib `Is*` naming convention.
+Follows the Mathlib `Is*` naming convention. The full qualified name `Topology.IsQuotientMap` is needed when `TopologicalSpace` is opened (bare `IsQuotientMap` is not resolved).
 
 ### `span` ambiguity -- use `Ideal.span`
 
@@ -93,6 +93,14 @@ When `RingHom` is in scope, bare `id` is ambiguous between `_root_.id` and `Ring
 ### `Finset.card` vs `Fintype.card` ambiguity
 
 When both `Fintype` and `Finset` are in scope, bare `card I` for a `Finset` is ambiguous. Use `I.card` (dot notation).
+
+### Unit interval type `I` requires `open unitInterval`
+
+The type alias `I` for the unit interval (`Set.Icc (0:ℝ) 1`) is scoped under `unitInterval`. Add `open unitInterval` to the header when exercises reference `I`.
+
+### Missing auxiliary definitions across exercises
+
+Some exercises reference custom definitions (`is_topology`, `lower_limit_topology`) that were only present in the header of one exercise in the original data. These definitions were copied into the headers of all exercises that reference them.
 
 ### Duplicate theorem names resolved with `'` suffix
 
