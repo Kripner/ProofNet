@@ -696,7 +696,7 @@ open scoped BigOperators
 
 open scoped BigOperators
 
-theorem exercise_1_2 :
+theorem exercise_1_2' :
   (⟨-1/2, Real.sqrt 3 / 2⟩ : ℂ) ^ 3 = -1 := by
   sorry
 
@@ -727,7 +727,7 @@ theorem exercise_1_9 {F V : Type*} [AddCommGroup V] [Field F]
 open Fintype Complex Polynomial LinearMap FiniteDimensional Module Module.End
 open scoped BigOperators
 
-theorem exercise_3_8 {F V W : Type*}  [AddCommGroup V]
+theorem exercise_3_8' {F V W : Type*}  [AddCommGroup V]
   [AddCommGroup W] [Field F] [Module F V] [Module F W]
   (L : V →ₗ[F] W) :
   ∃ U : Submodule F V, U ⊓ (ker L) = ⊥ ∧
@@ -1446,14 +1446,14 @@ theorem exercise_2_4 {a : ℤ} (ha : a ≠ 0)
 open Real
 open scoped BigOperators
 
-theorem exercise_2_27a :
+theorem exercise_2_27a' :
   ¬ Summable (λ i : {p : ℤ // Squarefree p} => (1 : ℚ) / i) := by
   sorry
 
 open Real
 open scoped BigOperators
 
-theorem exercise_3_4' : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 := by
+theorem exercise_3_4'' : ¬ ∃ x y : ℤ, 3*x^2 + 2 = y^2 := by
   sorry
 
 open Real
@@ -1466,7 +1466,7 @@ theorem exercise_3_10 {n : ℕ} (hn0 : ¬ n.Prime) (hn1 : n ≠ 4) :
 open Real
 open scoped BigOperators
 
-theorem exercise_4_4 {p t: ℕ} (hp0 : p.Prime) (hp1 : p = 4*t + 1)
+theorem exercise_4_4' {p t: ℕ} (hp0 : p.Prime) (hp1 : p = 4*t + 1)
   (a : ZMod p) :
   IsPrimitiveRoot a p ↔ IsPrimitiveRoot (-a) p := by
   sorry
@@ -1474,7 +1474,7 @@ theorem exercise_4_4 {p t: ℕ} (hp0 : p.Prime) (hp1 : p = 4*t + 1)
 open Real
 open scoped BigOperators
 
-theorem exercise_4_6 {p n : ℕ} (hp : p.Prime) (hpn : p = 2^n + 1) :
+theorem exercise_4_6' {p n : ℕ} (hp : p.Prime) (hpn : p = 2^n + 1) :
   IsPrimitiveRoot 3 p := by
   sorry
 

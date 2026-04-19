@@ -545,7 +545,7 @@ theorem exercise_2_12a (f : ℕ → ℕ) (p : ℕ → ℝ) (a : ℝ)
 open Filter Real Function
 open scoped Topology
 
-theorem exercise_2_29 (M : Type*) [MetricSpace M]
+theorem exercise_2_29' (M : Type*) [MetricSpace M]
   (O C : Set (Set M))
   (hO : O = {s | IsOpen s})
   (hC : C = {s | IsClosed s}) :
@@ -576,7 +576,7 @@ theorem exercise_2_126 {E : Set ℝ}
 open Filter Real Function
 open scoped Topology
 
-theorem exercise_3_4 (n : ℕ) :
+theorem exercise_3_4' (n : ℕ) :
   Tendsto (λ n => (Real.sqrt (n + 1) - Real.sqrt n)) atTop (𝓝 0) := by
   sorry
 
@@ -717,7 +717,7 @@ theorem exercise_1_6 : ∃ U : Set (ℝ × ℝ),
 open Fintype Complex Polynomial LinearMap FiniteDimensional Module Module.End
 open scoped BigOperators
 
-theorem exercise_1_8 {F V : Type*} [AddCommGroup V] [Field F]
+theorem exercise_1_8' {F V : Type*} [AddCommGroup V] [Field F]
   [Module F V] {ι : Type*} (u : ι → Submodule F V) :
   ∃ U : Submodule F V, (⋂ (i : ι), (u i).carrier) = ↑U := by
   sorry
@@ -725,7 +725,7 @@ theorem exercise_1_8 {F V : Type*} [AddCommGroup V] [Field F]
 open Fintype Complex Polynomial LinearMap FiniteDimensional Module Module.End
 open scoped BigOperators
 
-theorem exercise_3_1 {F V : Type*}
+theorem exercise_3_1' {F V : Type*}
   [AddCommGroup V] [Field F] [Module F V] [FiniteDimensional F V]
   (T : V →ₗ[F] V) (hT : finrank F V = 1) :
   ∃ c : F, ∀ v : V, T v = c • v := by
@@ -1466,19 +1466,19 @@ theorem exercise_2_21 {l : ℕ → ℝ}
 open Real
 open scoped BigOperators
 
-theorem exercise_3_1' : Infinite {p : Nat.Primes // p ≡ -1 [ZMOD 6]} := by
+theorem exercise_3_1'' : Infinite {p : Nat.Primes // p ≡ -1 [ZMOD 6]} := by
   sorry
 
 open Real
 open scoped BigOperators
 
-theorem exercise_3_5 : ¬ ∃ x y : ℤ, 7*x^3 + 2 = y^3 := by
+theorem exercise_3_5' : ¬ ∃ x y : ℤ, 7*x^3 + 2 = y^3 := by
   sorry
 
 open Real
 open scoped BigOperators
 
-theorem exercise_3_14 {p q n : ℕ} (hp0 : p.Prime ∧ p > 2)
+theorem exercise_3_14' {p q n : ℕ} (hp0 : p.Prime ∧ p > 2)
   (hq0 : q.Prime ∧ q > 2) (hpq0 : p ≠ q) (hpq1 : p - 1 ∣ q - 1)
   (hn : n.gcd (p*q) = 1) :
   n^(q-1) ≡ 1 [MOD p*q] := by
@@ -1502,7 +1502,7 @@ theorem exercise_4_8 {p a : ℕ} (hp : Odd p) :
 open Real
 open scoped BigOperators
 
-theorem exercise_5_13 {p x: ℤ} (hp : Prime p)
+theorem exercise_5_13' {p x: ℤ} (hp : Prime p)
   (hpx : p ∣ (x^4 - x^2 + 1)) : p ≡ 1 [ZMOD 12] := by
   sorry
 

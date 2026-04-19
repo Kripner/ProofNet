@@ -104,17 +104,28 @@ Some exercises reference custom definitions (`is_topology`, `lower_limit_topolog
 
 ### Duplicate theorem names resolved with `'` suffix
 
-Several theorem names appeared twice (from different textbooks). The second occurrence was renamed by appending `'`:
+The original data contained 19 duplicated exercise names (same number from different textbooks, appearing within or across splits). The second occurrence of each was renamed by appending `'` (or `''` when `'` was already taken):
 
 #### Valid split
+- `exercise_1_8` renamed to `exercise_1_8'`
+- `exercise_2_29` renamed to `exercise_2_29'`
+- `exercise_3_1` renamed to `exercise_3_1'` (2nd) and `exercise_3_1''` (3rd)
 - `exercise_3_3` renamed to `exercise_3_3'`
+- `exercise_3_4` renamed to `exercise_3_4'`
+- `exercise_3_5` renamed to `exercise_3_5'`
+- `exercise_3_14` renamed to `exercise_3_14'`
 - `exercise_3_22` renamed to `exercise_3_22'`
 - `exercise_4_5_16` renamed to `exercise_4_5_16'`
-- `exercise_3_1` renamed to `exercise_3_1'`
 - `exercise_5_4` renamed to `exercise_5_4'`
+- `exercise_5_13` renamed to `exercise_5_13'`
 
 #### Test split
-- `exercise_5_1` renamed to `exercise_5_1'` (2nd) and `exercise_5_1''` (3rd)
+- `exercise_1_2` renamed to `exercise_1_2'`
 - `exercise_1_4` renamed to `exercise_1_4'`
+- `exercise_2_27a` renamed to `exercise_2_27a'`
+- `exercise_3_4` renamed to `exercise_3_4''`
+- `exercise_3_8` renamed to `exercise_3_8'`
+- `exercise_4_4` renamed to `exercise_4_4'`
 - `exercise_4_5_23` renamed to `exercise_4_5_23'`
-- `exercise_3_4` renamed to `exercise_3_4'`
+- `exercise_4_6` renamed to `exercise_4_6'`
+- `exercise_5_1` renamed to `exercise_5_1'` (2nd) and `exercise_5_1''` (3rd)
