@@ -1162,22 +1162,22 @@ theorem exercise_13_3b : ¬ ∀ X : Type, ∀s : Set (Set X),
 open Filter Set TopologicalSpace
 open scoped Topology
 
-def is_topology (X : Type*) (T : Set (Set X)) :=
+def is_topology' (X : Type*) (T : Set (Set X)) :=
   univ ∈ T ∧
   (∀ s t, s ∈ T → t ∈ T → s ∩ t ∈ T) ∧
   (∀s, (∀t ∈ s, t ∈ T) → sUnion s ∈ T)
 
 theorem exercise_13_4a2 :
   ∃ (X I : Type*) (T : I → Set (Set X)),
-  (∀ i, is_topology X (T i)) ∧ ¬  is_topology X (⋂ i : I, T i) := by
+  (∀ i, is_topology' X (T i)) ∧ ¬  is_topology' X (⋂ i : I, T i) := by
   sorry
 
 open Filter Set TopologicalSpace
 open scoped Topology
 
-theorem exercise_13_4b2 (X I : Type*) (T : I → Set (Set X)) (h : ∀ i, is_topology X (T i)) :
-  ∃! T', is_topology X T' ∧ (∀ i, T' ⊆ T i) ∧
-  ∀ T'', is_topology X T'' → (∀ i, T'' ⊆ T i) → T' ⊆ T'' := by
+theorem exercise_13_4b2 (X I : Type*) (T : I → Set (Set X)) (h : ∀ i, is_topology' X (T i)) :
+  ∃! T', is_topology' X T' ∧ (∀ i, T' ⊆ T i) ∧
+  ∀ T'', is_topology' X T'' → (∀ i, T'' ⊆ T i) → T' ⊆ T'' := by
   sorry
 
 open Filter Set TopologicalSpace
@@ -1185,7 +1185,7 @@ open scoped Topology
 
 theorem exercise_13_5b {X : Type*}
   [t : TopologicalSpace X] (A : Set (Set X)) (hA : t = generateFrom A) :
-  generateFrom A = generateFrom (sInter {T | is_topology X T ∧ A ⊆ T}) := by
+  generateFrom A = generateFrom (sInter {T | is_topology' X T ∧ A ⊆ T}) := by
   sorry
 
 open Filter Set TopologicalSpace
@@ -1247,10 +1247,10 @@ theorem exercise_20_2
 open Filter Set TopologicalSpace
 open scoped Topology
 
-abbrev I : Set ℝ := Icc 0 1
+abbrev I' : Set ℝ := Icc 0 1
 
 theorem exercise_21_6b
-  (f : ℕ → I → ℝ )
+  (f : ℕ → I' → ℝ )
   (h : ∀ x n, f n x = x ^ n) :
   ¬ ∃ f₀, TendstoUniformly f f₀ atTop := by
   sorry
@@ -1304,9 +1304,9 @@ theorem exercise_23_11 {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 open Filter Set TopologicalSpace
 open scoped Topology
 
-theorem exercise_24_3a [TopologicalSpace I] [CompactSpace I]
-  (f : I → I) (hf : Continuous f) :
-  ∃ (x : I), f x = x := by
+theorem exercise_24_3a [TopologicalSpace I'] [CompactSpace I']
+  (f : I' → I') (hf : Continuous f) :
+  ∃ (x : I'), f x = x := by
   sorry
 
 open Filter Set TopologicalSpace
@@ -1328,7 +1328,7 @@ theorem exercise_26_12 {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 open Filter Set TopologicalSpace
 open scoped Topology
 
-def countably_compact (X : Type*) [TopologicalSpace X] :=
+def countably_compact' (X : Type*) [TopologicalSpace X] :=
   ∀ U : ℕ → Set X,
   (∀ i, IsOpen (U i)) ∧ ((univ : Set X) ⊆ ⋃ i, U i) →
   (∃ t : Finset ℕ, (univ : Set X) ⊆ ⋃ i ∈ t, U i)
@@ -1338,7 +1338,7 @@ def limit_point_compact (X : Type*) [TopologicalSpace X] :=
 
 theorem exercise_28_4 {X : Type*}
   [TopologicalSpace X] (hT1 : T1Space X) :
-  countably_compact X ↔ limit_point_compact X := by
+  countably_compact' X ↔ limit_point_compact X := by
   sorry
 
 open Filter Set TopologicalSpace
@@ -1352,8 +1352,8 @@ theorem exercise_28_6 {X : Type*} [MetricSpace X]
 open Filter Set TopologicalSpace
 open scoped Topology
 
-theorem exercise_29_4 [TopologicalSpace (ℕ → I)] :
-  ¬ LocallyCompactSpace (ℕ → I) := by
+theorem exercise_29_4 [TopologicalSpace (ℕ → I')] :
+  ¬ LocallyCompactSpace (ℕ → I') := by
   sorry
 
 open Filter Set TopologicalSpace
@@ -1404,7 +1404,7 @@ open scoped Topology
 theorem exercise_33_7 {X : Type*} [TopologicalSpace X]
   (hX : LocallyCompactSpace X) (hX' : T2Space X) :
   ∀ x A, IsClosed A ∧ ¬ x ∈ A →
-  ∃ (f : X → I), Continuous f ∧ f x = 1 ∧ f '' A = {0} := by
+  ∃ (f : X → I'), Continuous f ∧ f x = 1 ∧ f '' A = {0} := by
   sorry
 
 open Filter Set TopologicalSpace
